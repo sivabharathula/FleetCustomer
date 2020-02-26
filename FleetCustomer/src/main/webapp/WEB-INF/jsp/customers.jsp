@@ -32,7 +32,7 @@
      <th>Latitude </th>
      <th>Longitude </th>
      <th>Business Phone </th>
-     <th>Personal Phone </th>   
+     <th>Personal Phone </th>
 
      
    </tr>

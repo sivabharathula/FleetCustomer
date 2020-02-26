@@ -1,0 +1,83 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Fleet Management- Spring Boot Web Application</title>
+</head>
+<body>
+<H1 align="center" style="color:green">Customers List</H1>
+<h3 style="color:green">CustomerFleetJoin </h3>
+ <form method="get" action="search">
+        <input type="text" name="keyword" /> &nbsp;
+        <input type="submit" value="Search" />
+    </form>
+    <h3><a href="/new">New Customer</a></h3>
+   <br/>
+   <table border="1" cellpadding="10">
+   <tr>    
+        
+     <th>Customer IDs</th> 
+     <th>Customer Name</th>
+     <th>Address </th>
+     <th>City </th>     <th>State </th>
+     <th>Country </th>
+     <th>Postal Code </th>
+     <th>Latitude </th>
+     <th>Longitude </th>
+     <th>Business Phone </th>
+     <th>Personal Phone </th>   
+   </tr>
+   
+   <tr th:each="customerf:${CustomerFleetJoins}">
+   
+   <td th:text="${customerf.customerId}">CustomerId</td>
+         <td th:text="${customerf.customerName}">CustomerName</td>
+         <td th:text="${customerf.address_line_1}"></td>
+         <td th:text="${customerf.city}"></td>
+         <td th:text="${customerf.state}"></td>
+         <td th:text="${customerf.country}"></td>
+         <td th:text="${customerf.postal_code}"></td>
+         <td th:text="${customerf.latitude}"></td>
+         <td th:text="${customerf.longitude}"></td>
+         <td th:text="${customerf.business_phone}"></td>
+         <td th:text="${customerf.personal_phone}"></td>
+          <td> 
+          <a th:href="${customerId}">Edit</a> 
+             &nbsp;&nbsp;&nbsp;
+          <a th:href="${customerId}">Delete</a>
+          </td> 
+                             
+     
+        </table>
+
+<H1 style="color:green">Customer Fleet Infos</H1>
+
+<table border="1" cellpadding="10">
+    <tr>
+        <th>Fleet IDs</th>
+        <th>Fleet Name</th>
+        <th>Fleet Model </th>
+        <th>Fleet Make </th>
+        <th>Latitude </th>
+        <th>Longitude </th>
+        <th>Category </th>
+        <th>Serial Number </th>
+
+    </tr>
+    <tr th:each="fleet:${customerf.fleetInfos}" >
+
+
+        <td th:text="${fleet.fleet_id}"></td>
+        <td th:text="${fleet.fleet_name}"></td>
+        <td th:text="${fleet.fleet_model}"></td>
+        <td th:text="${fleet.fleet_make}"></td>
+        <td th:text="${fleet.latitude}"></td>
+        <td th:text="${fleet.longitude}"></td>
+        <td th:text="${fleet.category}"></td>
+        <td th:text="${fleet.serial_number}"></td>
+
+
+
+</table>
+   
+</body>
+</html>
